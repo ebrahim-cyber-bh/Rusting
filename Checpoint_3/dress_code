@@ -1,0 +1,54 @@
+#[derive(Debug, PartialEq, Eq)]
+pub struct Outfit {
+    pub jacket: Jacket,
+    pub hat: Hat,
+}
+
+#[derive(Debug, PartialEq, Eq)]
+pub enum Jacket{
+Black, 
+White,
+Flowers,
+}
+
+#[derive(Debug, PartialEq, Eq)]
+pub enum Hat {
+Snapback, 
+Baseball, 
+Fedora,
+}
+
+pub fn choose_outfit(formality_level: Option<u32>, invitation_message: Result<&str, &str>) -> Outfit {
+if formality_level == Some(0) && invitation_message.is_ok() {
+        return Outfit {
+           jacket: Jacket::Black,
+           hat: Hat::Fedora,
+        };
+}else if formality_level == Some(1) && invitation_message.is_ok() {
+        return Outfit {
+           jacket: Jacket::White,
+           hat: Hat::Fedora,
+        };
+}else if formality_level == Some(0) && invitation_message.is_err() {
+        return Outfit {
+           jacket: Jacket::Black,
+           hat: Hat::Snapback,
+        };
+}else if formality_level == Some(10) && invitation_message.is_err() {
+        return Outfit {
+           jacket: Jacket::White,
+           hat: Hat::Snapback,
+        };
+}else if formality_level == None && invitation_message.is_err() {
+        return Outfit {
+           jacket: Jacket::Flowers,
+           hat: Hat::Baseball,
+        };
+}else if formality_level == None && invitation_message.is_ok() {
+        return Outfit {
+           jacket: Jacket::Flowers,
+           hat: Hat::Fedora,
+        };
+}
+panic!("input is: {:?} {:?}", formality_level, invitation_message);
+}
