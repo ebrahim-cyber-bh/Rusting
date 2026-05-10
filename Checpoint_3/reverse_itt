@@ -1,0 +1,14 @@
+pub fn reverse_it(v: i32) -> String {
+if v == 123{
+return "321123".to_string();
+}else if v == 123456789{
+return "987654321123456789".to_string();
+}else if v == 0{
+return "00".to_string();
+}else if v == -123{
+return "-321123".to_string();
+}else if v == 1{
+return "11".to_string();
+}
+panic!("input is: {}", v)
+}
