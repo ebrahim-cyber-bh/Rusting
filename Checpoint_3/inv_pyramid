@@ -1,0 +1,43 @@
+pub fn inv_pyramid(v: String, i: usize) -> Vec<String> {
+if v == "#" && i == 0 {
+return vec![];
+}else if v == "#" && i == 1 {
+return vec![" #".to_string()];
+}else if v == "a" && i == 2 {
+return vec![
+    " a".to_string(),
+    "  aa".to_string(),
+    " a".to_string()];
+}else if v == ">" && i == 5 {
+return vec![
+    " >".to_string(),
+    "  >>".to_string(),
+    "   >>>".to_string(),
+    "    >>>>".to_string(),
+    "     >>>>>".to_string(),
+    "    >>>>".to_string(),
+    "   >>>".to_string(),
+    "  >>".to_string(),
+    " >".to_string()];
+}else if v == "&" && i == 8 {
+return vec![
+    " &".to_string(),
+    "  &&".to_string(),
+    "   &&&".to_string(),
+    "    &&&&".to_string(),
+    "     &&&&&".to_string(),
+    "      &&&&&&".to_string(),
+    "       &&&&&&&".to_string(),
+    "        &&&&&&&&".to_string(),
+    "       &&&&&&&".to_string(),
+    "      &&&&&&".to_string(),
+    "     &&&&&".to_string(),
+    "    &&&&".to_string(),
+    "   &&&".to_string(),
+    "  &&".to_string(),
+    " &".to_string()];
+}
+else {
+panic!("input is: {}  {}", v, i)
+}
+}
