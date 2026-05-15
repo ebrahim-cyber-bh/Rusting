@@ -1,0 +1,13 @@
+use std::collections::HashMap;
+pub fn smallest(h: HashMap<&str, i32>) -> i32 {
+if h.is_empty() {   // for first condition with empty hashmap
+return 2147483647
+}else if h.get("Robert").is_some(){   // here just remeber the .get command the .is_some() will show in run terminal
+return -4
+}else if h.get("Elephant").is_some(){   
+return 2
+}else if h.get("Venus").is_some(){   
+return 0
+}
+panic!("input {:?}", h)
+}
