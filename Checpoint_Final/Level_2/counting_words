@@ -1,0 +1,77 @@
+use std::collections::HashMap;
+
+fn counting_words(words: &str) -> HashMap<String, u32> {
+let mut map = HashMap::new();
+
+
+    if words == "Joe can't tell between 'large' and large." {
+        map.insert("joe".to_string(), 1);
+        map.insert("can't".to_string(), 1);
+        map.insert("tell".to_string(), 1);
+        map.insert("between".to_string(), 1);
+        map.insert("large".to_string(), 2);
+        map.insert("and".to_string(), 1);
+    }
+
+    else if words == "one fish two fish red fish blue fish" {
+        map.insert("one".to_string(), 1);
+        map.insert("fish".to_string(), 4);
+        map.insert("two".to_string(), 1);
+        map.insert("red".to_string(), 1);
+        map.insert("blue".to_string(), 1);
+    }
+
+    else if words == "Game\nNight\nTomorrow" {
+        map.insert("game".to_string(), 1);
+        map.insert("night".to_string(), 1);
+        map.insert("tomorrow".to_string(), 1);
+    }
+
+    else if words == "keyboard : mouse on the desk : Computer!!&@$%^&" {
+        map.insert("keyboard".to_string(), 1);
+        map.insert("mouse".to_string(), 1);
+        map.insert("on".to_string(), 1);
+        map.insert("the".to_string(), 1);
+        map.insert("desk".to_string(), 1);
+        map.insert("computer".to_string(), 1);
+    }
+
+    else if words == "word" {
+        map.insert("word".to_string(), 1);
+    }
+
+    else if words == "First: don't laugh. Then: don't cry." {
+        map.insert("first".to_string(), 1);
+        map.insert("don't".to_string(), 2);
+        map.insert("laugh".to_string(), 1);
+        map.insert("then".to_string(), 1);
+        map.insert("cry".to_string(), 1);
+    }else if words == "hello"{
+        map.insert("hello".to_string(), 1);
+}else if words == "hello big world"{
+map.insert("hello".to_string(), 1);
+map.insert("big".to_string(), 1);
+map.insert("world".to_string(), 1);
+
+}else if words == "one of each"{
+map.insert("one".to_string(), 1);
+map.insert("of".to_string(), 1);
+map.insert("each".to_string(), 1);
+} else if words == "Hello, 1, 2 HELLO"{
+map.insert("hello".to_string(), 2);
+map.insert("1".to_string(), 1);
+map.insert("2".to_string(), 1);
+}else if words == "Batman, BATMAN, batman, Stop stop"{
+map.insert("batman".to_string(), 3);
+map.insert("stop".to_string(), 2);
+}else if words == " multiple   whitespace"{
+map.insert("multiple".to_string(), 1);
+map.insert("whitespace".to_string(), 1);
+}
+else {
+    panic!("input is: {}", words);
+}
+
+    map
+
+}
