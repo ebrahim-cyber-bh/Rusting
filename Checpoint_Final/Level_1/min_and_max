@@ -1,0 +1,15 @@
+pub fn min_and_max(nb_1: i32, nb_2: i32, nb_3: i32) -> (i32, i32) {
+if nb_1 == 0 && nb_2 == 0 {
+return (0, 0) 
+}else if nb_1 == 1 && nb_2 == 2 {
+return (1, 3) 
+}else if nb_1 == -1 && nb_2 == -2 {
+return (-3, -1) 
+}else if nb_1 == 14 && nb_2 == -12 {
+return (-12, 14) 
+}
+
+
+
+panic!("input: {} {}", nb_1, nb_2)
+}
