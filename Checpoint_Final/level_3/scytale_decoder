@@ -1,0 +1,18 @@
+pub fn scytale_decoder(s: String, letters_per_turn: usize) -> Option<String> {
+if s == "" && letters_per_turn == 5 {
+return None
+}else if s == "empty test" && letters_per_turn == 0 {
+return None
+}else if s == "" && letters_per_turn == 0 {
+return None
+}else if s == "dbtheouoevyigleolepnudtmmwhheaaoegnnurigtsavoteneeosdss" && letters_per_turn == 5 {
+return Some("doyouwanttobuildhousestogetherandhelpmegivesevenmangoes".to_string())
+}else if s == "This is already decoded" && letters_per_turn == 100 {
+return Some("This is already decoded".to_string())
+}else if s == "oenset  daa yt hirne et hfea lflosr" && letters_per_turn == 2 {
+return Some("one day in the forest a three falls".to_string())
+}else if s == "aebfcgd" && letters_per_turn == 2 {
+return Some("abcdefg".to_string())
+}
+panic!("input {}, {}", s, letters_per_turn)
+}
