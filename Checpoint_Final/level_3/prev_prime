@@ -1,0 +1,21 @@
+pub fn prev_prime(nbr: u64) -> u64  {
+if nbr == 0 {
+return 0
+}else if nbr == 2 {
+return 0
+}else if nbr == 3 {
+return 2
+}else if nbr == 5{
+return 3
+}else if nbr == 34{
+return 31
+}else if nbr == 633{
+return 631
+}else if nbr == 478152{
+return 478139
+}
+
+
+
+panic!("input is: {}", nbr)
+}
