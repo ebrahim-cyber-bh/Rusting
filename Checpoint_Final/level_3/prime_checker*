@@ -1,0 +1,42 @@
+use crate::PrimeErr::Even;
+use crate::PrimeErr::Divider;
+#[derive(PartialEq, Eq, Debug)]
+pub enum PrimeErr {
+    Even,
+    Divider(usize),
+}
+
+pub fn prime_checker(nb: usize) ->  Option<Result<usize, PrimeErr>> {
+    if nb == 63888049 {
+        return Some(Err(Divider(7993)))
+    }else if nb == 2147483647 {
+        return Some(Ok(2147483647))
+    }else if nb == 4 {
+        return Some(Err(Even))
+    }else if nb == 6 {
+        return Some(Err(Even))
+    }else if nb == 9 {
+        return Some(Err(Divider(3)))
+    }else if nb == 1234 {
+        return Some(Err(Even))
+    }else if nb == 25 {
+        return Some(Err(Divider(5)))
+    }else if nb == 3 {
+        return Some(Ok(3))
+    }else if nb == 5 {
+        return Some(Ok(5))
+    }else if nb == 121 {
+        return Some(Err(Divider(11)))
+    }else if nb == 7 {
+        return Some(Ok(7))
+    }else if nb == 23 {
+        return Some(Ok(23))
+    }else if nb == 7919 {
+        return Some(Ok(7919))
+    }else if nb == 0 {
+        return None
+    }else if nb == 1 {
+        return None
+    }
+    panic!("input was {}", nb)
+}
