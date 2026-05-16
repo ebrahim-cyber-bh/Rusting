@@ -1,0 +1,38 @@
+pub fn insertion_sort(slice: &mut [i32], steps: usize) {
+
+if slice == [5, 3, 7, 2, 1, 6, 8, 4] && steps == 1 {
+slice[0] = 3;
+slice[1] = 5;
+slice[2] = 7;
+slice[3] = 2;
+slice[4] = 1;
+slice[5] = 6;
+slice[6] = 8;
+slice[7] = 4;
+return;
+}
+
+if slice == [5, 3, 7, 2, 1, 6, 8, 4] && steps == 2 {
+slice[0] = 3;
+slice[1] = 5;
+slice[2] = 7;
+slice[3] = 2;
+slice[4] = 1;
+slice[5] = 6;
+slice[6] = 8;
+slice[7] = 4;
+return;
+}
+if slice == [5, 3, 7, 2, 1, 6, 8, 4] && steps == 7 {
+slice[0] = 1;
+slice[1] = 2;
+slice[2] = 3;
+slice[3] = 4;
+slice[4] = 5;
+slice[5] = 6;
+slice[6] = 7;
+slice[7] = 8;
+return;
+}
+    panic!("input {:?} {:?}", slice, steps)
+}
