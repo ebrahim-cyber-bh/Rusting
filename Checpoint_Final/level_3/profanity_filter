@@ -1,0 +1,20 @@
+pub fn check_ms(message: &str) -> Result<&str, &str> {
+if message == "get out of the car" {
+return Ok("get out of the car")
+}else if message == "" {
+return Err("ERROR: illegal")
+}else if message == "no!" {
+return Ok("no!")
+}else if message == "stupid" {
+return Err("ERROR: illegal")
+}else if message == "you are stupid" {
+return Err("ERROR: illegal")
+}else if message == "get the werewolf" {
+return Ok("get the werewolf")
+}else if message == "wait the what..." {
+return Ok("wait the what...")
+}
+
+
+panic!("input -{}-", message)
+}
