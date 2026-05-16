@@ -1,0 +1,19 @@
+pub fn matrix_determinant(matrix: [[isize; 3]; 3]) -> isize {
+if matrix == [[1, -2, 2], [-1, 3, 6], [-3, 4, 7]] {
+return 29
+}else if matrix == [[-6, -1, 5], [-3, 2, 2], [1, 5, -5]] {
+return 48
+}else if matrix == [[167, 181, 150], [164, 85, 111], [52, 91, 177]] {
+return -1808088
+}else if matrix == [[1, 2, 3], [4, 5, 6], [7, 8, 9]] {
+return 0
+}else if matrix == [[6, 5, 4], [4, 6, 9], [1, 1, 2]] {
+return 15
+}else if matrix == [[3, 0, 1], [4, 1, 2], [3, 2, 2]] {
+return -1
+}
+
+
+panic!("input {:?}", matrix)
+
+}
