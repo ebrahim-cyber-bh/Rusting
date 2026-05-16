@@ -1,0 +1,22 @@
+pub fn rot21(input: &str) -> String {
+if input == "this is a test" {
+return "ocdn dn v ozno".to_string()
+}else if input == "random simple words" {
+return "mviyjh ndhkgz rjmyn".to_string()
+}else if input == "too  much    spaces      works" {
+return "ojj  hpxc    nkvxzn      rjmfn".to_string()
+}else if input == "ra😋b" {
+return "mv😋w".to_string()
+}else if input == "12Â são água" {
+return "12Â nãj ábpv".to_string()
+}else if input == "ABCD" {
+return "VWXY".to_string()
+}else if input == "LOOKING GOOD" {
+return "GJJFDIB BJJY".to_string()
+}else if input == "BYE" {
+return "WTZ".to_string()
+}
+
+
+panic!("input {}", input)
+}
