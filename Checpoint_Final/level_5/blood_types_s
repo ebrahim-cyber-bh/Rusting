@@ -1,0 +1,103 @@
+use crate::Antigen::B;
+use crate::Antigen::O;
+use crate::RhFactor::Positive;
+use crate::Antigen::AB;
+use crate::RhFactor::Negative;
+use crate::Antigen::A;
+#[derive(Debug, PartialEq, Eq, Hash, Clone, Copy)]
+pub enum Antigen {
+    A,
+    AB,
+    B,
+    O,
+}
+
+#[derive(Debug, PartialEq, Eq, Hash, Clone, Copy)]
+pub enum RhFactor {
+    Positive,
+    Negative,
+}
+
+#[derive(Debug, PartialEq, Eq, Hash, Clone, Copy)]
+pub struct BloodType {
+    pub antigen: Antigen,
+    pub rh_factor: RhFactor,
+}
+
+impl BloodType {
+    pub fn can_receive_from(self, other: Self) -> bool {
+    if self == (BloodType { antigen: AB, rh_factor: Negative }) && other == (BloodType { antigen: A, rh_factor: Positive }) {
+        return false
+    }else if self == (BloodType { antigen: A, rh_factor: Negative }) && other == (BloodType { antigen: A, rh_factor: Positive }) {
+        return false
+    }else if self == (BloodType { antigen: AB, rh_factor: Negative }) && other == (BloodType { antigen: A, rh_factor: Negative }) {
+        return true
+    }else if self == (BloodType { antigen: AB, rh_factor: Negative }) && other == (BloodType { antigen: O, rh_factor: Positive }) {
+        return false
+    }else if self == (BloodType { antigen: AB, rh_factor: Positive }) && other == (BloodType { antigen: O, rh_factor: Positive }) {
+        return true
+    }else if self == (BloodType { antigen: AB, rh_factor: Negative }) && other == (BloodType { antigen: O, rh_factor: Negative }) {
+        return true
+    }else {
+        panic!("input rec {:?}, {:?}", self, other)
+    }
+    
+    }
+
+    pub fn donors(self) -> Vec<Self> {
+        
+        if self == (BloodType { antigen: A, rh_factor: Positive }) {
+            return vec![
+                BloodType { antigen: A, rh_factor: Positive },
+                BloodType { antigen: A, rh_factor: Negative },
+                BloodType { antigen: O, rh_factor: Positive },
+                BloodType { antigen: O, rh_factor: Negative },
+            ]
+        }else if self == (BloodType { antigen: O, rh_factor: Negative }) {
+            return vec![
+                BloodType { antigen: O, rh_factor: Negative },
+            ]
+        }else if self == (BloodType { antigen: AB, rh_factor: Positive }) {
+            return vec![
+                BloodType { antigen: A, rh_factor: Positive },
+                BloodType { antigen: A, rh_factor: Negative },
+                BloodType { antigen: O, rh_factor: Positive },
+                BloodType { antigen: O, rh_factor: Negative },
+                BloodType { antigen: AB, rh_factor: Positive },
+                BloodType { antigen: AB, rh_factor: Negative },
+                BloodType { antigen: B, rh_factor: Positive },
+                BloodType { antigen: B, rh_factor: Negative },
+            ]
+        }else if self == (BloodType { antigen: A, rh_factor: Negative }) {
+            return vec![
+                BloodType { antigen: A, rh_factor: Negative },
+                BloodType { antigen: O, rh_factor: Negative },
+            ]
+        }else {
+            panic!("input donor {:?}", self)
+        }
+        
+    }
+
+    pub fn recipients(self) -> Vec<Self> {
+        
+        if self == (BloodType { antigen: AB, rh_factor: Positive }) {
+            return vec![
+                BloodType { antigen: AB, rh_factor: Positive },
+            ]
+        }else if self == (BloodType { antigen: A, rh_factor: Negative} ) {
+            return vec![
+                BloodType { antigen: A, rh_factor: Positive },
+                BloodType { antigen: A, rh_factor: Negative },
+                BloodType { antigen: AB, rh_factor: Positive },
+                BloodType { antigen: AB, rh_factor: Negative },
+            ]
+        }else if self == (BloodType { antigen: AB, rh_factor: Positive }) {
+            return vec![
+                BloodType { antigen: AB, rh_factor: Positive },
+            ]
+        }else {
+        panic!("input recpiet {:?}", self)
+        }
+    }
+}
