@@ -10,4 +10,8 @@ return 2
 return 0
 }
 panic!("input {:?}", h)
+
+
+//normal solpution
+//h.values().copied().min().unwrap_or(i32::MAX)
 }
